@@ -8,7 +8,7 @@ It favors original embedded assets over screenshots or page rasterization:
 - PDF scan fallback: optionally renders pages that have no embedded images at a chosen DPI.
 - Office files: extracts original media from `.docx`, `.pptx`, and `.xlsx` packages.
 - Reports: writes JSON and CSV metadata, including dimensions, byte size, SHA-256, and duplicates.
-- Interfaces: command line and a small tkinter desktop GUI.
+- Interfaces: command line, a small tkinter desktop GUI, and a local browser web app.
 
 ## Install
 
@@ -55,6 +55,28 @@ python -m extract_images.gui
 ```
 
 The GUI lets you choose input/output folders, a report path, DPI, recursive scanning, and scan-page rendering.
+
+## Web Tool
+
+Run the local web app:
+
+```powershell
+python -m extract_images.web
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8765/
+```
+
+The web page lets you upload PDF, DOCX, PPTX, and XLSX files, choose extraction settings, and download a ZIP containing the extracted images plus a JSON report.
+
+After installing the package, you can also run:
+
+```powershell
+image-harvest-web
+```
 
 ## Three-Agent Design
 

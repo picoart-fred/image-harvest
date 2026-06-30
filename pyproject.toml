@@ -27,6 +27,7 @@ dev = [
 [project.scripts]
 image-harvest = "extract_images.cli:main"
 image-harvest-gui = "extract_images.gui:main"
+image-harvest-web = "extract_images.web:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["extract_images"]
