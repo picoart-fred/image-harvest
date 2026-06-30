@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "image-harvest"
+version = "0.1.0"
+description = "Batch extract high-quality images from PDF and Office files."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+  { name = "Image Harvest Contributors" }
+]
+keywords = ["pdf", "image-extraction", "office", "batch", "pymupdf"]
+dependencies = [
+  "PyMuPDF>=1.24",
+  "Pillow>=10"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "ruff>=0.8"
+]
+
+[project.scripts]
+image-harvest = "extract_images.cli:main"
+image-harvest-gui = "extract_images.gui:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["extract_images"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
